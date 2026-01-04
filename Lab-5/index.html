@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook Signup</title>
+</head>
+<body>
+<h2>Facebook Signup</h2>
+
+<form onsubmit="return validate()" method="post" action="signup.php">
+  <input type="hidden" name="platform" value="Facebook">
+
+  Username: <input type="text" id="username" name="username"><br><br>
+  Email: <input type="email" id="email" name="email"><br><br>
+  Password: <input type="password" id="password" name="password"><br><br>
+
+  <button type="submit">Sign Up</button>
+</form>
+
+<script>
+function validate() {
+  if (
+    document.getElementById("username").value === "" ||
+    document.getElementById("email").value === "" ||
+    document.getElementById("password").value.length < 6
+  ) {
+    alert("All fields required & password must be 6+ characters");
+    return false;
+  }
+  return true;
+}
+</script>
+</body>
+</html>
